@@ -3,11 +3,16 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Or your default branch
+      - main # Or the branch you push your source code to
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions: # <--- ADD THIS BLOCK
+      contents: write # Allows the action to write to the repository (for pushing the build output)
+      pages: write    # Required for deploying to GitHub Pages
+      id-token: write # Required for OpenID Connect (if your action uses it)
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -15,23 +20,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Or your desired Node.js version
-          cache: 'npm' # Or 'yarn'
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install # Or yarn install
+        run: npm install
 
       - name: Build
-        run: npm run build # Or yarn build
+        run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # If your repository name is different from your username.github.io,
-          # you might need to set the cname option:
-          # cname: 'your-custom-domain.com'
-          # If you are using a project page (e.g., username.github.io/repo-name)
-          # and have configured `base: '/repo-name/'` in vite.config.ts,
-          # you don't typically need extra configuration here for that.
+          # If your repository is sunilkumar02.github.io, you usually don't need a base path
+          # because it's a user/organization page. If it were a project page (e.g., repo-name),
+          # you'd need base: '/repo-name/' in vite.config.ts.
+          # For sunilkumar02.github.io, your base should likely be '/' or omitted.
