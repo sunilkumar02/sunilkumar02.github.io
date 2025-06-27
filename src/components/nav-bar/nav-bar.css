@@ -1,0 +1,38 @@
+.nav-bar-outer {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 2;
+}
+
+.menuItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuItems a,
+.menuItems a:hover,
+.menuItems a:active {
+    color: var(--color-link);
+    text-decoration: none;
+    line-height: 1.2em;
+    height: 60px;
+    text-align: center;
+}
+
+.menuItems a span {
+    display: block;
+    line-height: 1.2em;
+    font-size: 12px;
+}
+
+.menuItems::after {
+    content: '';
+    width: 1px;
+    height: 70px;
+    background-color: var(--color-link);
+    opacity: 0.5;
+}
