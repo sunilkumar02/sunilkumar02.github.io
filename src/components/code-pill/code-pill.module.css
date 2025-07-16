@@ -1,0 +1,43 @@
+.code-pill {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.code-pill ul {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    height: 20px;
+    overflow: hidden;
+}
+
+.code-pill li {
+    list-style: none;
+    line-height: 1.5em;
+    font-size: 0.8rem;
+    color: var(--color-accent-primary);
+    animation: slide-up 12s infinite;
+}
+
+.code-pill span {
+    line-height: 1.5em;
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    margin-right: 0.5rem;
+}
+
+@keyframes slide-up {
+    0%, 25%{
+        transform: translateY(0%);
+    }
+    25%, 50%{
+        transform: translateY(-100%);
+    }
+    50%, 75%{
+        transform: translateY(-200%);
+    }
+    75%, 100%{
+        transform: translateY(-300%);
+    }
+}

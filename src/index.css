@@ -7,79 +7,49 @@
 /* ------------------------------------------------------------------- 
  * ## fonts 
  * ------------------------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('./styles/animation.css');
 
-:root {
-    --font-1: "Public Sans", Sans-serif;
-    --font-2: "Castoro", Serif;
+:root{
+    --font-1: "Poppins", sans-serif;
+    --font-2: "Montserrat", sans-serif;
 }
-
-/* ------------------------------------------------------------------- 
- * ## colors
- * ------------------------------------------------------------------- */
-:root {
-
-    --color-1: #C73E1D;
-    --color-2: #2F352B;
-    --color-3: #1A1A1A;
-    --color-4: #FFFFFF;
-
-  /* text
-   */
-    --color-text       : #181818;
-    --color-text-dark  : #1A1A1A;
-    --color-text-light : #767776;
-    --color-placeholder: #A5A7A5;
-    --color-text-white : var(--color-4);
-
-  /* link
-   */
-    --color-link       : #C73E1D;
-    --color-link-hover : #2F352B;
-    --color-link-active: #2F352B;
-
-  /* buttons
-   */
-    --color-btn                   : #eceeec;
-    --color-btn-text              : #181818;
-    --color-btn-hover             : #d4d6d4;
-    --color-btn-hover-text        : #181818;
-    --color-btn-primary           : #C73E1D;
-    --color-btn-primary-text      : var(--color-text-white);
-    --color-btn-primary-hover     : #C73E1D;
-    --color-btn-primary-hover-text: #ffffff;
-    --color-btn-stroke            : #1A1A1A;
-    --color-btn-stroke-text       : #1A1A1A;
-    --color-btn-stroke-hover      : #1A1A1A;
-    --color-btn-stroke-hover-text : var(--color-text-white);
-
-  /* preloader
-   */
-    --color-preloader-bg: #eceeec;
-    --color-loader      : #1A1A1A;
-    --color-loader-light: #5e5f5e;
-
-  /* others
-   */
-    --color-body-bg: #fbfcfb;
-    --color-border : rgba(0, 0, 0, .1);
-    --border-radius: 5px;
-}
-
 body {
-    font-family: var(--font-1);
-    font-size  : 20px;
-    font-weight: 400;
-    line-height: 3.2rem;
-    color      : var(--color-text);
     margin: 0;
     padding: 0;
+    font-family: var(--font-1);
+    font-weight: 300;
+    color: var(--color-secondary);
+    background-color: var(--color-body-bg);
 }
 
-/* links
-*/
+/* Theme Styles */
+
+body {
+    --color-primary: #c93f1d;
+    --color-secondary: #F5F5F5;
+    --color-link : #c93f1d;
+    --color-link-hover : #2F352B;
+
+    --color-text: #F5F5F5;
+    --color-text-50: #f5f5f580;
+
+    --color-btn-text: #c93f1d;
+    --color-btn-bg: #c93f1d;
+    --color-btn-bg-hover: transparent;
+    --color-btn-text-hover: #f5f5f5;
+
+    --color-body-bg: #020312;
+
+    --color-accent-primary: #00C853;
+    --color-accent-secondary: #F5F5F5;
+    --color-accent-tertiary: #3b4045;;
+}
+
+/* links */
 a {
-    color     : var(--color-link);
+    color: var(--color-link);
     transition: all 0.3s ease-in-out;
 }
 
@@ -94,25 +64,6 @@ a:active {
     outline: 0;
 }
 
-/* headings
- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-    font-family           : var(--font-2);
-    font-weight           : 400;
-    color                 : var(--color-text-dark);
-}
-
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -121,131 +72,55 @@ img {
     width: 100%;
 }
 
-.page-center {
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: var(--color-text)
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.colorGradient {
+    background: linear-gradient(to right, #00ff90 0%, #b642f5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.skeleton {
+    position: relative;
+}
+ .skeleton::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: min(92%, 1280px);    
-    margin: 0 auto;
-    padding: 0 20px;
-}
+    height: 100%;
+    z-index: 5;
+    border-radius: var(--radius);
+    background-color: #3b4045;
+    background-image:  linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%);
+    background-size: 50% 100%;
+    background-position: -200% 0;
+    background-repeat: no-repeat;
+    color: var(--color-pale-grey);
+    animation: skeleton-shimmer 1.25s ease infinite;
+ }
 
-.btn {
-    display: inline-block;
-    font-family: var(--font-1);
-    font-weight: 500;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    height: 56px;
-    padding: 0 2.6rem;
-    margin: 0 0.4rem  0;
-    color: #ffffff;
-    text-decoration: none;
-    text-align: center;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: all 0.3s;
-    background-color: #141414;
-    border: 2px solid #141414;
-}
-
-.btn:hover {
-    background-color: #C73E1D;
-    border: 2px solid #C73E1D;
-    color: #ffffff;
-}
-
-.btn.is-outlined {
-    background-color: transparent;
-    border: 2px solid #141414;
-    color: #141414;
-}
-
-.btn.is-outlined:hover {
-    background-color: #141414;
-    border: 2px solid #141414;
-    color: #ffffff;
-}
-
-/* Theme Styling */
-.dark-theme {
-    background-color: var(--color-3);
-    color: var(--color-text-white);
-}
-
-.dark-theme h1,
-.dark-theme h2,
-.dark-theme h3,
-.dark-theme h4,
-.dark-theme h5,
-.dark-theme h6,
-.dark-theme p{
-    color: var(--color-text-white);
-}
-
-.light-theme {
-    background-color: var(--color-preloader-bg);
-    color: var(--color-text-dark);
-}
-
-.light-theme h1,
-.light-theme h2,
-.light-theme h3,
-.light-theme h4,
-.light-theme h5,
-.light-theme h6,
-.light-theme p {
-    color: var(--color-text-dark);
-}
-
-/* animations */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(60px);
-  animation: fadeInUp 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-}
-
-.fade-in-down {
-  opacity: 0;
-  transform: translateY(-60px);
-  animation: fadeInDown 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-}
-
-.fade-in-left {
-  opacity: 0;
-  transform: translateX(-60px);
-  animation: fadeInLeft 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-}
-
-.fade-in-right {
-  opacity: 0;
-  transform: translateX(60px);
-  animation: fadeInRight 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+ @keyframes skeleton-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
 }

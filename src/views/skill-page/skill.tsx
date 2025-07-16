@@ -1,4 +1,4 @@
-import type { Skill } from '../../utility/core.type';
+import type { Skill } from '@utils/core.type';
 import html5 from '../../assets/html-5.png';
 import CSS from '../../assets/css.png';
 import ReactLogo from '../../assets/react.png';

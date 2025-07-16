@@ -1,0 +1,46 @@
+.banner-image {
+    position: relative;
+	max-width: 450px;
+}
+
+.banner-image img {
+    max-width: 350px;
+    min-height: 500px;
+    max-height: 80vh;
+    object-fit: cover;
+}
+
+.banner--hero-banner {
+    position: relative;
+    text-align: center;
+    padding: 40px;
+}
+
+.banner--hero-banner:before {
+    content: '';
+    width: 100px;
+    height: 100px;
+    border: 10px solid var(--color-primary);
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.banner--hero-banner::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    border: 10px solid var(--color-primary);
+    border-top-color: transparent;
+    border-left-color: transparent;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.banner-image-inner {
+    min-width: 300px;
+    min-height: 500px;
+}

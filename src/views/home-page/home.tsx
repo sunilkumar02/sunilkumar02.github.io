@@ -1,35 +1,31 @@
-import BGImage from '../../assets/intro-bg.jpg'
+import BannerImage from '@components/banner-image';
+import TabPill from '@components/tab-pill/tab-pill'
+import {Button} from '@components/button'
 import './home.css';
+import type { userInfo } from '../../types/user.type';
 
-const Home = () => {
+const Home = ({userData}: {userData: userInfo}) => {
   return (
     <>
-      <div className="intro-section outer light-theme">
-        <div className='page-center'>
-            <div className="intro-wrapper">
-                <div className="intro-left">
-                    <div className="intro-content">
+    <div className="bannersection-outer">
+      <div className='banner-section-inner'>
 
-                        <div className="text-pretitle">Hello</div>
-                        <h1 className="text-title">
-                            I'm Sunil Kumar <br />
-                            a Front-end Developer <br />
-                            base in Bengaluru.
-                        </h1>                            
-
-                        <div className="intro-content-btns">
-                            <a className="btn" href="javascript:void(0)">More About Me</a>
-                            <a className="btn is-outlined" href="javascript:void(0)">Get In Touch</a>
-                        </div>
-
-                    </div>
-                </div>
-                <div className="intro-right fade-in">
-                    <img src={BGImage} alt="intro bg" />
-                </div>
-            </div>
+        <div className="banner-image-outer">
+          <BannerImage src={userData.profile_url} label={userData.first_name} />
         </div>
-      </div>
+
+        <div className='banner-content-outer'>
+          <TabPill label='Available to work' pillType="notify"/>
+          <h1>Hey, I'm <span className='highlight-text'>{userData.first_name} {userData.last_name}</span></h1>
+          <h3>a Front-end Developer from Bengaluru.</h3>
+          <p>I develop user-centric front-end solutions that harness technology to drive positive impact and enhance lives.</p>
+          <div className='get-in-touch'>
+              <Button onClick={() => console.log('Download Resume clicked')}>Download Resume</Button>
+          </div>
+        </div>
+        </div>
+    </div>
+        
     </>
   )
 }

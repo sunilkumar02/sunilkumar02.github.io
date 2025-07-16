@@ -1,0 +1,83 @@
+.btn,
+.btn--primary {
+    display: inline-block;    
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.4rem 0;
+    color: var(--color-btn-text);
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    border: 2px solid var(--color-btn-bg);
+    border-radius: 32px;
+    font-family: var(--font-1);
+    background: linear-gradient(to right, var(--color-btn-bg) 50%, var(--color-btn-bg-hover) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+
+.btn:hover {
+   background-position: left bottom;
+   color: var(--color-btn-text-hover);
+}
+
+.btn span,
+.btn--arrow-left span {
+    position: absolute;
+    left: 0;
+    right: auto;
+    height: 40px;
+    width: 40px;
+    top: 0;
+    background-color: var(--color-primary);
+    color: var(--color-btn-text-hover);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn--arrow-left {
+    padding-left: calc(40px + 0.5rem);
+}
+
+.btn--arrow-right {
+    padding-right: calc(40px + 0.5rem);
+} 
+
+.btn--arrow-right {
+    background: linear-gradient(to left, var(--color-btn-bg) 50%, var(--color-btn-bg-hover) 50%);
+    background-size: 200% 100%;
+    background-position: left bottom;
+} 
+
+.btn--arrow-right:hover {
+    background-position: right bottom;
+} 
+
+.btn--arrow-right span {
+    left: auto;
+    right: 0;
+}
+
+.btn.btn--outlined {
+    background-color: transparent;
+    border: 2px solid var(--color-btn-text);
+    color: var(--color-btn-text);
+}
+
+.btn.btn--outlined:hover {
+    background-color: var(--color-btn-text);
+    border: 2px solid var(--color-btn-text);
+    color: var(--color-btn-hover-text);
+}
+
+.btn span svg {
+    width: 20px;
+    height: 20px;
+}
