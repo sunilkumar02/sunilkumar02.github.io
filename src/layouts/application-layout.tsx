@@ -1,19 +1,21 @@
 
 import NavBar from "../components/nav-bar/nav-bar";
-import style from './application-layout.module.css'
+import '@styles/layout.css'
 
 //design a layout component
 interface ApplicationLayoutProps {
+    className?: string;
+    styles?: React.CSSProperties;
     children: React.ReactNode;
 }
 
-const ApplicationLayout:React.FC<ApplicationLayoutProps> = ({children}) => {
+const ApplicationLayout:React.FC<ApplicationLayoutProps> = ({children, className, styles}) => {
     return (
-        <div className={style['app-layout']}>
+        <div className={`app-layout ${className}`} style={styles}>
             <header className="app-header">
                 <NavBar />
             </header>
-            <main className={style['app-main']}>
+            <main className="app-main">
                 {children}
             </main>
         </div>

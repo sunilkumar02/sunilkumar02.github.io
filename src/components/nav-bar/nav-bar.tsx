@@ -3,7 +3,7 @@ import './nav-bar.css';
 import TabPill from '@components/tab-pill/tab-pill';
 import { useEffect, useState } from 'react';
 import { useApplicationView,  } from '../../context/ApplicationViewContext';
-import { applicationView } from '../../types/enums';
+import { applicationView } from '../../utils/enums/enums';
 
 const NavBar = () => {
     const [menuHeight, setMenuHeight] = useState(0);

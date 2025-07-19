@@ -1,0 +1,41 @@
+.app-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-card {
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.grid-layout {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    width: 100%;
+    padding-right: 40px;
+}
+
+.grid-layout.one-third {
+    grid-template-columns: 2fr 3fr;
+}
+
+.grid-layout.two-two {
+    grid-template-columns: 2fr 2fr;
+}
+
+.grid-layout.three-one {
+    grid-template-columns: 3fr 1fr;
+}
+
+.grid-layout.one-one-one {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-layout.four {
+    grid-template-columns: 1fr;
+}

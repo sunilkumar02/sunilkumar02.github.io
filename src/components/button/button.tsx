@@ -9,15 +9,16 @@ interface ButtonProps {
     variant?: ButtonKind;
     children: React.ReactNode;
     arrowPosition?: "left" | "right";
+    className?: string;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const Button: React.FC<ButtonProps> = ({variant = 'primary', children, arrowPosition = 'left', onClick}) => {
+const Button: React.FC<ButtonProps> = ({variant = 'primary', children, arrowPosition = 'left', onClick, className}) => {
     return (
         <button 
             className={`${style.btn} 
             ${style[`btn--${variant}`]} 
-            ${style[`btn--arrow-${arrowPosition}`]}`}
+            ${style[`btn--arrow-${arrowPosition}`]} ${className}`}
             onClick={onClick}
         >
             <span className={style.icon}><FontAwesomeIcon icon={faArrowRight} /></span>

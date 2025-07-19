@@ -29,7 +29,7 @@
 .btn span,
 .btn--arrow-left span {
     position: absolute;
-    left: 0;
+    left: -1px;
     right: auto;
     height: 40px;
     width: 40px;
@@ -62,7 +62,7 @@
 
 .btn--arrow-right span {
     left: auto;
-    right: 0;
+    right: -1px;
 }
 
 .btn.btn--outlined {

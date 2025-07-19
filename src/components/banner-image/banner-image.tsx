@@ -5,9 +5,10 @@ interface BannerImageProps {
     src: string;
     label?: string;
     type?: 'hero-banner' | 'cover-banner';
+    className?: string;
 }
 
-const BannerImage: React.FC<BannerImageProps> = ({ src, label, type = 'hero-banner' }) => {
+const BannerImage: React.FC<BannerImageProps> = ({ src, label, type = 'hero-banner', className }) => {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
@@ -17,7 +18,8 @@ const BannerImage: React.FC<BannerImageProps> = ({ src, label, type = 'hero-bann
     },[])
 
     return (
-        <div className={`${style[`banner-image`]} ${style[`banner--${type}`]}`} >
+        <div className={`${style[`banner-image`]} ${style[`banner--${type}`]} ${className || ''}`} >
+
             <div className={`${style['banner-image-inner']} ${!isLoaded ? 'skeleton' : ''}`}>
                 <img src={src} alt={label}/>
             </div>

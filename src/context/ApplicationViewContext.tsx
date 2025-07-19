@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { applicationView } from "../types/enums";
+import { applicationView } from "../utils/enums/enums";
 
 // You can extend this type with more fields if needed
 export interface ApplicationViewContextType {

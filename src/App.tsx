@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
-import './App.css'
-import ApplicationLayout from './layout/application-layout';
+import ApplicationLayout from './layouts/application-layout';
 import Home from './views/home-page/home';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from './firebase/firebase';
-import type { userInfo } from 'types/user.type';
+import type { userInfo } from '@utils/types/user.type';
 import LoadingView from './views/loading-page/loading-view';
 import { useApplicationView } from './context/ApplicationViewContext';
-import { applicationView } from './types/enums';
+import { applicationView } from './utils/enums/enums';
+import About from '@views/about-page/about';
+import SkillView from '@views/skill-page/skill';
 
 function App() {
 const [userData, setUserData] = useState<userInfo | null>(null);
@@ -39,6 +40,10 @@ const renderCurrentView = () => {
   switch (currentView) {
     case getApplicationView().Home:
       return userData && <Home userData={userData} />;
+    case getApplicationView().AboutUs:
+      return  userData && <About userData={userData} />;
+    case getApplicationView().Skills:
+      return userData && <SkillView  userData={userData} />;
     default:
       return <div className='coming-soon-section'> <h1 className='colorGradient'>Coming Soon...</h1></div>;
   }

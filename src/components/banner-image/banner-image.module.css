@@ -1,20 +1,22 @@
 .banner-image {
     position: relative;
 	max-width: 450px;
-}
-
-.banner-image img {
-    max-width: 350px;
-    min-height: 500px;
-    max-height: 80vh;
-    object-fit: cover;
-}
-
-.banner--hero-banner {
+    margin: 0 auto;
     position: relative;
     text-align: center;
     padding: 40px;
 }
+
+.banner-image img {
+    max-width: 350px;
+    object-fit: cover;
+}
+
+.banner--hero-banner img {
+    min-height: 65vh;
+    max-height: 80vh;
+}
+
 
 .banner--hero-banner:before {
     content: '';
@@ -40,7 +42,13 @@
     right: 0;
 }
 
-.banner-image-inner {
-    min-width: 300px;
-    min-height: 500px;
+.banner--cover-banner {
+    
+}
+
+
+.banner--cover-banner .banner-image-inner {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid var(--color-primary);
 }
