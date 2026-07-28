@@ -3,7 +3,6 @@ import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { ProfileSocialLink } from '../../features/portfolio';
 import { SkillPill } from '@components/atoms/pills';
 import { CardSmall } from '@components/atoms/card';
-import { SideNav } from '@components/common/SideNav';
 import type { userInfo } from '@utils/types/user.type';
 
 interface IProfileDetail {
@@ -120,11 +119,6 @@ const Home = ({ userData }: { userData: userInfo }) => {
         />
       </div>
 
-      <SideNav label="Quick contact links">
-        {socialMedia.map((item) => (
-          <ProfileSocialLink compact item={item} key={item.label} />
-        ))}
-      </SideNav>
     </section>
   );
 };
