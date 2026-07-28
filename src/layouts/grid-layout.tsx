@@ -1,4 +1,4 @@
-import '@styles/layout.css';
+import '@styles/layout.scss';
 import { GridTemplateColumns } from '@utils/enums/enums';
 
 interface GridLayoutProps {

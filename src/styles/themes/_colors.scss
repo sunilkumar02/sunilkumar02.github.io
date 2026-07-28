@@ -1,0 +1,94 @@
+// =============================================
+// RAW COLOR PALETTE
+// =============================================
+
+// Core neutrals
+$neutral-black: #131517;
+$neutral-white: #f7f7f7;
+$neutral-bright-white: #ffffff;
+$transparent-white: #ffffff00;
+
+// Light neutral scale
+$neutral-light00: #f6f7fa;
+$neutral-light01: #e8e9ed;
+$neutral-light02: #c7c9d2;
+$neutral-light03: #9b9dac;
+$neutral-light04: #757886;
+$neutral-light-page: #f3f5f9;
+$neutral-light-code: #f1f2f4;
+$neutral-light-border: #cccccc;
+$neutral-light-body: #4a4a4a;
+$neutral-light-strong: #0a0a0a;
+$neutral-light-subtle: #6b6d7a;
+$neutral-light-subtle-bg: #f2f5fa;
+
+// Dark neutral scale
+$neutral-dark00: #2f3038;
+$neutral-dark01: #545662;
+$neutral-dark02: #33353e;
+$neutral-dark03: #2a2b32;
+$neutral-dark035: #666666;
+$neutral-dark04: #23242a;
+$neutral-dark05: #1b1d21;
+$neutral-dark06: #131517;
+$neutral-dark-code: #0f1113;
+$neutral-dark-strong: #ececef;
+$neutral-gray: #414549;
+
+// Brand colors
+$brand-cyan01: #0de0e1;
+$brand-cyan02: #6ae1f2;
+$brand-cyan03: #00a1d2;
+$brand-green01: #2de8af;
+$brand-blue01: #27baf9;
+$brand-blue02: #067cf9;
+$brand-blue03: #0d7bc5;
+$brand-red: #ff2c1e;
+$brand-purple01: #6069f5;
+$brand-purple: #8b5cf6;
+
+// System colors
+$system-success: #18ef6e;
+$system-success-light: #a5f0c3;
+$system-error: #ff4f43;
+$system-error-light: #ffc5c1;
+$system-warning: #ffef5d;
+$system-warning-light: #fffac8;
+
+// Raw palette variables are available for non-theme design tooling only.
+:root {
+  --neutral-black: #{$neutral-black};
+  --neutral-white: #{$neutral-white};
+  --neutral-bright-white: #{$neutral-bright-white};
+  --transparent-white: #{$transparent-white};
+  --neutral-light00: #{$neutral-light00};
+  --neutral-light01: #{$neutral-light01};
+  --neutral-light02: #{$neutral-light02};
+  --neutral-light03: #{$neutral-light03};
+  --neutral-light04: #{$neutral-light04};
+  --neutral-dark00: #{$neutral-dark00};
+  --neutral-dark01: #{$neutral-dark01};
+  --neutral-dark02: #{$neutral-dark02};
+  --neutral-dark03: #{$neutral-dark03};
+  --neutral-dark035: #{$neutral-dark035};
+  --neutral-dark04: #{$neutral-dark04};
+  --neutral-dark05: #{$neutral-dark05};
+  --neutral-dark06: #{$neutral-dark06};
+  --neutral-gray: #{$neutral-gray};
+  --brand-cyan01: #{$brand-cyan01};
+  --brand-cyan02: #{$brand-cyan02};
+  --brand-cyan03: #{$brand-cyan03};
+  --brand-green01: #{$brand-green01};
+  --brand-blue01: #{$brand-blue01};
+  --brand-blue02: #{$brand-blue02};
+  --brand-blue03: #{$brand-blue03};
+  --brand-red: #{$brand-red};
+  --brand-purple01: #{$brand-purple01};
+  --brand-purple: #{$brand-purple};
+  --system-success: #{$system-success};
+  --system-success-light: #{$system-success-light};
+  --system-error: #{$system-error};
+  --system-error-light: #{$system-error-light};
+  --system-warning: #{$system-warning};
+  --system-warning-light: #{$system-warning-light};
+}

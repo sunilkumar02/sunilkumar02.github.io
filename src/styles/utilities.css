@@ -1,0 +1,5 @@
+@import "tailwindcss" source(none);
+@config "../../tailwind.config.js";
+@source "../**/*.{ts,tsx}";
+@source "../../index.html";
+@source inline("bg-theme-gradient border-semantic-line-rule bg-semantic-panel-bg bg-semantic-panel-bg-50 bg-semantic-page-bg text-semantic-accent-primary text-semantic-text-body text-semantic-text-strong");

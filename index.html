@@ -1,14 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/jpg" href="/favicol_logo.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        document.documentElement.dataset.theme =
+          savedTheme === "light" || savedTheme === "dark" ? savedTheme : "dark";
+      } catch {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Sunil.</title>
   </head>
-  <body>
+  <body class="bg-semantic-page-bg text-semantic-text-body font-sans">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

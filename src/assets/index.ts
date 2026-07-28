@@ -10,4 +10,5 @@ export { default as Lit } from './lit.svg';
 export { default as Wordpress } from './wordpress.png';
 
 // Exporting Images
-export { default as Intro } from './intro-bg.jpg';
+// export { default as Intro } from './intro-bg.png';
+export { default as Intro } from './hero-intro.png';

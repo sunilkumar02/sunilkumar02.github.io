@@ -8,7 +8,9 @@ export interface userInfo {
   description: string;
   base_location: string;
   skills: string[];
+  expertise?: string[];
   core_strength: CoreStrength[];
+  social_media?: ISocialMedia[];
 }
 
 export interface CoreStrength {
@@ -16,3 +18,21 @@ export interface CoreStrength {
   description: string;
   logo: string;
 }
+
+export interface ISocialMedia {
+  label: string;
+  icon: TSocialMediaIcon;
+  url: string;
+  category: TSocialMediaCategory;
+}
+
+export type TSocialMediaIcon =
+  | 'linkedin'
+  | 'email'
+  | 'phone'
+  | 'whatsapp'
+  | 'instagram'
+  | 'github'
+  | 'leetcode';
+
+export type TSocialMediaCategory = 'connect' | 'work';

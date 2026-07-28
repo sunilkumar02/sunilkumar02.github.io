@@ -1,3 +1,5 @@
+@use "./themes/semantic-colors" as semantic;
+
 /* =================================================================== 
  * Sunil Main Stylesheet
 /* ===================================================================
@@ -11,189 +13,139 @@
 @import url('@styles/animation.scss');
 @import url('@styles/views.scss');
 
-:root{
-    --font-1: "Poppins", sans-serif;
-    --font-2: "Montserrat", sans-serif;
-}
-body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-1);
-    font-weight: 300;
-    color: var(--color-secondary);
-    background-color: var(--color-body-bg);
-}
+@layer base {
+    :root{
+        --font-1: "Poppins", sans-serif;
+        --font-2: "Montserrat", sans-serif;
+    }
 
-/* Theme Styles */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-1);
+        font-weight: 300;
+        color: semantic.$semantic-text-body;
+        background-color: semantic.$semantic-page-bg;
+    }
 
-body {
-    --color-primary: #c93f1d;
-    --color-secondary: #F5F5F5;
-    --color-link : #c93f1d;
-    --color-link-hover : #2F352B;
+    /* links */
+    a {
+        color: semantic.$semantic-accent-primary;
+        transition: all 0.3s ease-in-out;
+    }
 
-    --color-text: #F5F5F5;
-    --color-text-50: #f5f5f580;
+    blockquote, dd, dl, dt, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
+        margin: 0;
+    }
 
-    --color-btn-text: #c93f1d;
-    --color-btn-bg: #c93f1d;
-    --color-btn-bg-hover: transparent;
-    --color-btn-text-hover: #f5f5f5;
+    a:focus,
+    a:hover,
+    a:active {
+        color: semantic.$semantic-text-strong;
+    }
 
-    --color-body-bg: #020312;
+    a:hover,
+    a:active {
+        outline: 0;
+    }
 
-    --color-accent-primary: #00C853;
-    --color-accent-secondary: #00ffff;
-    --color-accent-tertiary: #3b4045;
-}
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
 
-/* links */
-a {
-    color: var(--color-link);
-    transition: all 0.3s ease-in-out;
-}
-
-a:focus,
-a:hover,
-a:active {
-    color: var(--color-link-hover);
-}
-
-a:hover,
-a:active {
-    outline: 0;
-}
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-img {
-    width: 100%;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
-  line-height: 1.2;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  color: var(--color-text)
-}
-
-p {
-  font-weight: 300;
-  line-height: 1.6;
-  color: var(--color-text);
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-// 
-
-.mt-8 {
-    margin-top: 2rem !important;
-}
-
-.mt-18 {
-    margin-top: 4.5rem !important;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.text-left {
-    text-align: left;
+    img {
+        width: 100%;
+    }
 }
 
 
 
 /* Global Class Styles */
 
-.colorGradient {
-    background: linear-gradient(to right, #00ff90 0%, #b642f5 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+@layer components {
+    .colorGradient {
+        background: linear-gradient(
+            to right,
+            semantic.$semantic-gradient-stop-1,
+            semantic.$semantic-gradient-stop-2
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-.skeleton {
-    position: relative;
-}
-
-.skeleton::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    border-radius: var(--radius);
-    background-color: #3b4045;
-    background-image:  linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%);
-    background-size: 50% 100%;
-    background-position: -200% 0;
-    background-repeat: no-repeat;
-    color: var(--color-pale-grey);
-    animation: skeleton-shimmer 1.25s ease infinite;
- }
-
-.coming-soon-section {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-    justify-content: center;
-}
-
-.coming-soon-section h1 {
-    font-size: 40px;
-    font-weight: 800;
-    text-transform: uppercase;
-    line-height: 1.5;
-    margin: 0;
-    max-width: 400px;
-    text-align: center;
-    width: 400px; 
-    overflow: hidden; 
-    white-space: nowrap; 
-    letter-spacing: .1rem; 
-    animation: 
-    typing 3.5s steps(40, end);
-}
-
-.title {
+    .skeleton {
         position: relative;
-    font-size: 3rem;
-    font-weight: 800;
-    text-transform: capitalize;
-    line-height: 5rem;
-}
+    }
 
-.title::before {
-    content: attr(data-text);
-    font-weight: 800;
-    font-size: 6rem;
-    text-transform: capitalize;
-    letter-spacing: -0.1rem;
-    line-height: 1;
-    color: #2F352B;
-    position: absolute;
-    top: 1rem;
-    left: 0;
-    opacity: 0.5;
-    z-index: -1;
-    width: 100%;
-}
+    .skeleton::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        border-radius: var(--radius);
+        background-color: semantic.$semantic-panel-bg-03;
+        background-image: linear-gradient(
+            90deg,
+            transparent 0,
+            var(--semantic-text-body-high-contrast-20) 50%,
+            transparent 100%
+        );
+        background-size: 50% 100%;
+        background-position: -200% 0;
+        background-repeat: no-repeat;
+        color: semantic.$semantic-text-subtle;
+        animation: skeleton-shimmer 1.25s ease infinite;
+    }
 
+    .coming-soon-section {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+        justify-content: center;
+    }
 
-.highlight-text {
-    color: var(--color-primary);
-    font-weight: 800;
+    .coming-soon-section h1 {
+        font-size: 40px;
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 1.5;
+        margin: 0;
+        max-width: 400px;
+        text-align: center;
+        width: 400px;
+        overflow: hidden;
+        white-space: nowrap;
+        letter-spacing: .1rem;
+        animation: typing 3.5s steps(40, end);
+    }
+
+    .title {
+        position: relative;
+        font-size: 3rem;
+        font-weight: 800;
+        text-transform: capitalize;
+        line-height: 5rem;
+    }
+
+    .title::before {
+        content: attr(data-text);
+        font-weight: 800;
+        font-size: 6rem;
+        text-transform: capitalize;
+        letter-spacing: -0.1rem;
+        line-height: 1;
+        color: semantic.$semantic-neutral-surface;
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        opacity: 0.5;
+        z-index: -1;
+        width: 100%;
+    }
 }

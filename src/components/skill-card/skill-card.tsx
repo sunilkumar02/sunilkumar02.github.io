@@ -1,4 +1,4 @@
-import './skill-card.css'
+import './skill-card.scss'
 
 interface SkillCardProps {
   title: string;

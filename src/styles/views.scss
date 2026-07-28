@@ -1,4 +1,5 @@
 
+@layer components {
 .banner-content-outer h1 {
     margin: 0;
     font-size: 54px;
@@ -20,8 +21,8 @@
 // Core Strengths Section
 .coreStrength {
     text-align: center;
-    background-color: #68686826;
-    border: 1px solid #6868686B;
+    background-color: var(--semantic-panel-bg-03-40);
+    border: 1px solid var(--semantic-line-rule);
     padding: 20px 20px;
     border-radius: 16px;
     display: grid;
@@ -46,7 +47,7 @@
     width: 34px;
     height: 34px;
     margin-bottom: 1rem;
-    color: #9169e1;
+    color: var(--semantic-brand-audio);
 }
 
 .coreStrength:nth-child(3n+1){
@@ -74,4 +75,5 @@
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2.5rem;
+}
 }

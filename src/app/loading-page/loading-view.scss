@@ -1,0 +1,56 @@
+.loading-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.infoIcons svg {
+    width: 24px;
+    height: 24px;
+    margin: 0 0.5rem;
+    padding: 1rem;
+    border: 2px solid var(--semantic-line-rule);
+    border-radius: 50%;
+    background-color: var(--semantic-line-rule);
+    box-shadow:
+        0 0 20px var(--semantic-text-body-high-contrast-20),
+        0 0 60px var(--semantic-text-body-high-contrast-20);
+}
+
+.infoIcons {
+    padding-bottom: 1.5rem;
+}
+
+.loading-page h1 {
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.loading-page p {
+    margin-top: 0.5rem;
+    line-height: 1.2;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+    width: 300px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.loading-page p::before {
+    position: absolute;
+    background-color: var(--semantic-line-rule);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
