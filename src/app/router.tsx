@@ -1,7 +1,5 @@
 import { createBrowserRouter } from 'react-router';
-import { profileMockData } from '../features/portfolio';
 import App from './App';
-import Home from './home-page/home';
 import NotFound from './not-found-page/not-found';
 
 export const router = createBrowserRouter([
@@ -12,7 +10,7 @@ export const router = createBrowserRouter([
   },
   {
     path: '/profile',
-    element: <Home userData={profileMockData} />,
+    element: <App />,
     errorElement: <NotFound />,
   },
 ]);

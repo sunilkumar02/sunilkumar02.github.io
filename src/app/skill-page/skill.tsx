@@ -3,7 +3,6 @@ import SkillCard from '../../components/skill-card/skill-card';
 import type { userInfo } from '@utils/types/user.type';
 import SectionCard from '@layouts/section-card';
 import GridLayout from '@layouts/grid-layout';
-import { HeadlineType, TextAlignment } from '@utils/enums/enums';
 import { HTML, Angular, CSS, Javascript, React, Typescript, Hubspot, Lit, Wordpress } from "@assets/index";
 import { useEffect, useState } from 'react';
 
