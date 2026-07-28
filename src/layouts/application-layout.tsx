@@ -1,5 +1,5 @@
 
-import NavBar from "../components/nav-bar/nav-bar";
+
 import '@styles/layout.scss'
 
 //design a layout component
@@ -13,7 +13,6 @@ const ApplicationLayout:React.FC<ApplicationLayoutProps> = ({children, className
     return (
         <div className={`app-layout ${className}`} style={styles}>
             <header className="app-header">
-                <NavBar />
             </header>
             <main className="app-main">
                 {children}

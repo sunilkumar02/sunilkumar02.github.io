@@ -1,3 +1,4 @@
+@layer components {
 .app-layout {
     display: flex;
     flex-direction: column;
@@ -38,4 +39,5 @@
 
 .grid-layout.four {
     grid-template-columns: 1fr;
+}
 }

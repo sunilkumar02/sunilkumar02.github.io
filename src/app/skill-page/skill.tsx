@@ -3,7 +3,6 @@ import SkillCard from '../../components/skill-card/skill-card';
 import type { userInfo } from '@utils/types/user.type';
 import SectionCard from '@layouts/section-card';
 import GridLayout from '@layouts/grid-layout';
-import Headline from '@components/headline/headline';
 import { HeadlineType, TextAlignment } from '@utils/enums/enums';
 import { HTML, Angular, CSS, Javascript, React, Typescript, Hubspot, Lit, Wordpress } from "@assets/index";
 import { useEffect, useState } from 'react';
@@ -45,8 +44,6 @@ const SkillView = ({userData}: {userData: userInfo}) => {
         <GridLayout>
           
           <div className='skill-section-outer'>
-
-            <Headline title='My Skills' subTitle='my skills'  aligment={TextAlignment.Center} type={HeadlineType.Overlay}/>
 
             <div className="skill-list">
                 {skills.map((skill, index) => (

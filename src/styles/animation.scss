@@ -1,3 +1,4 @@
+@layer utilities {
 .typewriter{
   overflow: hidden; 
   white-space: nowrap; 
@@ -141,4 +142,5 @@
     opacity: 1;
     transform: scale(1, 1); 
   }
+}
 }

@@ -7,7 +7,6 @@ import type { userInfo } from '@utils/types/user.type';
 import LoadingView from './loading-page/loading-view';
 import { useApplicationView } from '../context/ApplicationViewContext';
 import { applicationView } from '../utils/enums/enums';
-import About from '@views/about-page/about';
 import SkillView from '@views/skill-page/skill';
 
 function App() {
@@ -40,8 +39,6 @@ const renderCurrentView = () => {
   switch (currentView) {
     case getApplicationView().Home:
       return userData && <Home userData={userData} />;
-    case getApplicationView().AboutUs:
-      return  userData && <About userData={userData} />;
     case getApplicationView().Skills:
       return userData && <SkillView  userData={userData} />;
     default:

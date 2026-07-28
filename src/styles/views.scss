@@ -1,4 +1,5 @@
 
+@layer components {
 .banner-content-outer h1 {
     margin: 0;
     font-size: 54px;
@@ -74,4 +75,5 @@
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2.5rem;
+}
 }
