@@ -1,3 +1,5 @@
+@use "./themes/semantic-colors" as semantic;
+
 /* =================================================================== 
  * Sunil Main Stylesheet
 /* ===================================================================
@@ -20,43 +22,30 @@ body {
     padding: 0;
     font-family: var(--font-1);
     font-weight: 300;
-    color: var(--color-secondary);
-    background-color: var(--color-body-bg);
-}
-
-/* Theme Styles */
-
-body {
-    --color-primary: #c93f1d;
-    --color-secondary: #F5F5F5;
-    --color-link : #c93f1d;
-    --color-link-hover : #2F352B;
-
-    --color-text: #F5F5F5;
-    --color-text-50: #f5f5f580;
-
-    --color-btn-text: #c93f1d;
-    --color-btn-bg: #c93f1d;
-    --color-btn-bg-hover: transparent;
-    --color-btn-text-hover: #f5f5f5;
-
-    --color-body-bg: #020312;
-
-    --color-accent-primary: #00C853;
-    --color-accent-secondary: #00ffff;
-    --color-accent-tertiary: #3b4045;
+    color: semantic.$semantic-text-body;
+    background-color: semantic.$semantic-page-bg;
 }
 
 /* links */
 a {
-    color: var(--color-link);
+    color: semantic.$semantic-accent-primary;
     transition: all 0.3s ease-in-out;
 }
+
+blockquote, dd, dl, dt, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
 
 a:focus,
 a:hover,
 a:active {
-    color: var(--color-link-hover);
+    color: semantic.$semantic-text-strong;
 }
 
 a:hover,
@@ -72,50 +61,16 @@ img {
     width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
-  line-height: 1.2;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  color: var(--color-text)
-}
-
-p {
-  font-weight: 300;
-  line-height: 1.6;
-  color: var(--color-text);
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-// 
-
-.mt-8 {
-    margin-top: 2rem !important;
-}
-
-.mt-18 {
-    margin-top: 4.5rem !important;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.text-left {
-    text-align: left;
-}
-
 
 
 /* Global Class Styles */
 
 .colorGradient {
-    background: linear-gradient(to right, #00ff90 0%, #b642f5 100%);
+    background: linear-gradient(
+        to right,
+        semantic.$semantic-gradient-stop-1,
+        semantic.$semantic-gradient-stop-2
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -134,12 +89,17 @@ p {
     height: 100%;
     z-index: 5;
     border-radius: var(--radius);
-    background-color: #3b4045;
-    background-image:  linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0) 100%);
+    background-color: semantic.$semantic-panel-bg-03;
+    background-image: linear-gradient(
+        90deg,
+        transparent 0,
+        var(--semantic-text-body-high-contrast-20) 50%,
+        transparent 100%
+    );
     background-size: 50% 100%;
     background-position: -200% 0;
     background-repeat: no-repeat;
-    color: var(--color-pale-grey);
+    color: semantic.$semantic-text-subtle;
     animation: skeleton-shimmer 1.25s ease infinite;
  }
 
@@ -183,17 +143,11 @@ p {
     text-transform: capitalize;
     letter-spacing: -0.1rem;
     line-height: 1;
-    color: #2F352B;
+    color: semantic.$semantic-neutral-surface;
     position: absolute;
     top: 1rem;
     left: 0;
     opacity: 0.5;
     z-index: -1;
     width: 100%;
-}
-
-
-.highlight-text {
-    color: var(--color-primary);
-    font-weight: 800;
 }

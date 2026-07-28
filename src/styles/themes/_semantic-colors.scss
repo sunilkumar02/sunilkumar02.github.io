@@ -1,0 +1,72 @@
+@use "sass:map";
+@use "sass:meta";
+@use "./theme-registry" as registry;
+
+$semantic-page-bg: var(--semantic-page-bg);
+$semantic-overlay-lightbox: var(--semantic-overlay-lightbox);
+$semantic-panel-bg: var(--semantic-panel-bg);
+$semantic-panel-bg-02: var(--semantic-panel-bg-02);
+$semantic-panel-bg-03: var(--semantic-panel-bg-03);
+$semantic-panel-bg-04: var(--semantic-panel-bg-04);
+$semantic-markdown-code-bg: var(--semantic-markdown-code-bg);
+$semantic-line-rule: var(--semantic-line-rule);
+$semantic-icon-brand: var(--semantic-icon-brand);
+$semantic-icon-neutral: var(--semantic-icon-neutral);
+$semantic-accent-primary: var(--semantic-accent-primary);
+$semantic-accent-branded: var(--semantic-accent-branded);
+$semantic-shadow-color: var(--semantic-shadow-color);
+$semantic-text-body: var(--semantic-text-body);
+$semantic-text-body-high-contrast: var(--semantic-text-body-high-contrast);
+$semantic-text-strong: var(--semantic-text-strong);
+$semantic-text-subhead: var(--semantic-text-subhead);
+$semantic-text-subtle: var(--semantic-text-subtle);
+$semantic-text-subtle-01: var(--semantic-text-subtle-01);
+$semantic-text-subtle-02: var(--semantic-text-subtle-02);
+$semantic-text-button: var(--semantic-text-button);
+$semantic-nav-bg: var(--semantic-nav-bg);
+$semantic-nav-selected-tab: var(--semantic-nav-selected-tab);
+$semantic-nav-selected-tab-bg: var(--semantic-nav-selected-tab-bg);
+$semantic-nav-footer-bg: var(--semantic-nav-footer-bg);
+$semantic-footer-bg: var(--semantic-footer-bg);
+$semantic-brand-oai: var(--semantic-brand-oai);
+$semantic-brand-writer: var(--semantic-brand-writer);
+$semantic-brand-video: var(--semantic-brand-video);
+$semantic-brand-audio: var(--semantic-brand-audio);
+$semantic-brand-graphics: var(--semantic-brand-graphics);
+$semantic-gradient-stop-1: var(--semantic-gradient-stop-1);
+$semantic-gradient-stop-2: var(--semantic-gradient-stop-2);
+$semantic-neutral-surface: var(--semantic-neutral-surface);
+$semantic-neutral-dark-to-light: var(--semantic-neutral-dark-to-light);
+$semantic-button-secondary: var(--semantic-button-secondary);
+$semantic-button-secondary-hover: var(--semantic-button-secondary-hover);
+$semantic-button-high-contrast: var(--semantic-button-high-contrast);
+$semantic-modal-shadow: var(--semantic-modal-shadow);
+
+@mixin emit-semantic-properties($theme) {
+  @each $token, $value in $theme {
+    --semantic-#{$token}: #{$value};
+
+    @if meta.type-of($value) == "color" {
+      @for $step from 1 through 9 {
+        $opacity: $step * 10;
+        --semantic-#{$token}-#{$opacity}: color-mix(
+          in srgb,
+          var(--semantic-#{$token}) #{$opacity}%,
+          transparent
+        );
+      }
+    }
+  }
+}
+
+:root {
+  color-scheme: dark;
+  @include emit-semantic-properties(map.get(registry.$themes, "dark"));
+}
+
+@each $theme-name, $theme-values in registry.$themes {
+  [data-theme="#{$theme-name}"] {
+    color-scheme: #{$theme-name};
+    @include emit-semantic-properties($theme-values);
+  }
+}

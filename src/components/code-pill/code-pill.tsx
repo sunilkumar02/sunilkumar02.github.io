@@ -1,4 +1,4 @@
-import style from './code-pill.module.css'
+import style from './code-pill.module.scss'
 
 interface CodePillProps {
     codeSnippet: string[];

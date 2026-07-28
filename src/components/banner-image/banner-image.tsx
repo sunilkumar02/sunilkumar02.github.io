@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import style from './banner-image.module.css'
+import style from './banner-image.module.scss'
 
 interface BannerImageProps {
     src: string;

@@ -16,28 +16,31 @@
     list-style: none;
     line-height: 1.5em;
     font-size: 0.8rem;
-    color: var(--color-accent-primary);
+    color: var(--semantic-accent-primary);
     animation: slide-up 12s infinite;
 }
 
 .code-pill span {
     line-height: 1.5em;
     font-size: 0.8rem;
-    color: var(--color-primary);
+    color: var(--semantic-accent-primary);
     margin-right: 0.5rem;
 }
 
 @keyframes slide-up {
-    0%, 25%{
+    0%, 25% {
         transform: translateY(0%);
     }
-    25%, 50%{
+
+    25%, 50% {
         transform: translateY(-100%);
     }
-    50%, 75%{
+
+    50%, 75% {
         transform: translateY(-200%);
     }
-    75%, 100%{
+
+    75%, 100% {
         transform: translateY(-300%);
     }
 }

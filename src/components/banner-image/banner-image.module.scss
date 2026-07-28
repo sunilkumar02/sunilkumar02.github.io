@@ -1,6 +1,5 @@
 .banner-image {
-    position: relative;
-	max-width: 450px;
+    max-width: 450px;
     margin: 0 auto;
     position: relative;
     text-align: center;
@@ -17,12 +16,11 @@
     max-height: 80vh;
 }
 
-
-.banner--hero-banner:before {
+.banner--hero-banner::before {
     content: '';
     width: 100px;
     height: 100px;
-    border: 10px solid var(--color-primary);
+    border: 10px solid var(--semantic-accent-primary);
     border-bottom-color: transparent;
     border-right-color: transparent;
     position: absolute;
@@ -34,7 +32,7 @@
     content: '';
     width: 100px;
     height: 100px;
-    border: 10px solid var(--color-primary);
+    border: 10px solid var(--semantic-accent-primary);
     border-top-color: transparent;
     border-left-color: transparent;
     position: absolute;
@@ -42,13 +40,8 @@
     right: 0;
 }
 
-.banner--cover-banner {
-    
-}
-
-
 .banner--cover-banner .banner-image-inner {
     border-radius: 50%;
     overflow: hidden;
-    border: 10px solid var(--color-primary);
+    border: 10px solid var(--semantic-accent-primary);
 }

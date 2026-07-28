@@ -1,0 +1,161 @@
+@use "sass:map";
+@use "./colors" as colors;
+
+// ============================================= 
+// THEME DEFINITIONS 
+// =============================================
+
+$themes: (
+  "dark": (
+    // Page Colors
+    "page-bg": colors.$neutral-dark05,
+
+    // Overlay Colors
+    "overlay-lightbox": rgba(colors.$neutral-dark06, 0.38),
+
+    // UI Colors
+    "panel-bg": colors.$neutral-dark06,
+    "panel-bg-02": colors.$neutral-dark04,
+    "panel-bg-03": colors.$neutral-dark02,
+    "panel-bg-04": colors.$neutral-dark01,
+    "markdown-code-bg": colors.$neutral-dark-code,
+    "line-rule": colors.$neutral-dark02,
+    "icon-brand": colors.$brand-cyan01,
+    "icon-neutral": colors.$neutral-white,
+
+    // Accent Colors
+    "accent-primary": colors.$brand-cyan01,
+    "accent-branded": colors.$brand-cyan02,
+
+    // Shadow Properties
+    "shadow-x": 0,
+    "shadow-y": 0,
+    "shadow-blur": 0,
+    "shadow-color": colors.$transparent-white,
+    "shadow-spread": 0,
+    "modal-shadow":
+      "0 25px 50px -12px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.1)",
+
+    // Text Colors
+    "text-body": colors.$neutral-light01,
+    "text-body-high-contrast": colors.$neutral-white,
+    "text-strong": colors.$neutral-dark-strong,
+    "text-subhead": colors.$neutral-light01,
+    "text-subtle": colors.$neutral-light03,
+    "text-subtle-01": colors.$neutral-light03,
+    "text-subtle-02": colors.$neutral-light03,
+    "text-button": colors.$neutral-dark06,
+
+    // Navigation Colors
+    "nav-bg": colors.$neutral-dark03,
+    "nav-selected-tab": colors.$neutral-dark05,
+    "nav-selected-tab-bg": colors.$neutral-dark05,
+    "nav-footer-bg": colors.$neutral-dark06,
+    "footer-bg": colors.$neutral-dark06,
+
+    // Brand Colors
+    "brand-oai": colors.$brand-cyan01,
+    "brand-writer": colors.$brand-blue01,
+    "brand-video": colors.$brand-red,
+    "brand-audio": colors.$brand-purple,
+    "brand-graphics": colors.$brand-green01,
+
+    // Gradient Colors
+    "gradient-stop-1": colors.$brand-blue01,
+    "gradient-stop-2": colors.$brand-green01,
+
+    // Neutrals Mapping
+    "neutral-surface": colors.$neutral-dark00,
+    "neutral-dark-to-light": colors.$neutral-dark06,
+
+    // Button Colors
+    "button-secondary": colors.$neutral-dark02,
+    "button-secondary-hover": colors.$neutral-dark01,
+    "button-high-contrast": colors.$neutral-dark05,
+  ),
+
+  "light": (
+
+    // Page Colors
+    "page-bg": colors.$neutral-light-page,
+
+    // Overlay Colors
+    "overlay-lightbox": rgba(colors.$neutral-bright-white, 0.38),
+
+    // UI Colors
+    "panel-bg": colors.$neutral-bright-white,
+    "panel-bg-02": colors.$neutral-bright-white,
+    "panel-bg-03": colors.$neutral-bright-white,
+    "panel-bg-04": colors.$neutral-bright-white,
+    "markdown-code-bg": colors.$neutral-light-code,
+    "line-rule": colors.$neutral-light-border,
+    "icon-brand": colors.$brand-cyan01,
+    "icon-neutral": colors.$neutral-light-body,
+
+    // Accent Colors
+    "accent-primary": colors.$brand-blue03,
+    "accent-branded": colors.$brand-cyan03,
+
+    // Shadow Properties
+    "shadow-x": 0,
+    "shadow-y": 4,
+    "shadow-blur": 10,
+    "shadow-color": rgba(colors.$neutral-light-border, 0.3),
+    "shadow-spread": 2,
+    "modal-shadow":
+      "0 25px 50px -12px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,0,0,0.06)",
+
+    // Text Colors
+    "text-body": colors.$neutral-light-body,
+    "text-body-high-contrast": colors.$neutral-black,
+    "text-strong": colors.$neutral-light-strong,
+    "text-subhead": colors.$neutral-light-body,
+    "text-subtle": colors.$neutral-light-subtle,
+    "text-subtle-01": colors.$neutral-light-body,
+    "text-subtle-02": colors.$neutral-light-subtle-bg,
+    "text-button": colors.$neutral-light01,
+
+    // Navigation Colors
+    "nav-bg": colors.$neutral-bright-white,
+    "nav-selected-tab": colors.$neutral-light-page,
+    "nav-selected-tab-bg": colors.$neutral-light-page,
+    "nav-footer-bg": colors.$neutral-dark035,
+    "footer-bg": colors.$neutral-dark035,
+
+    // Brand Colors
+    "brand-oai": colors.$brand-cyan01,
+    "brand-writer": colors.$brand-blue01,
+    "brand-video": colors.$brand-red,
+    "brand-audio": colors.$brand-purple,
+    "brand-graphics": colors.$brand-green01,
+
+    // Gradient Colors
+    "gradient-stop-1": colors.$brand-blue03,
+    "gradient-stop-2": colors.$brand-blue03,
+
+    // Neutrals Mapping
+    "neutral-surface": colors.$neutral-light00,
+    "neutral-dark-to-light": colors.$neutral-light01,
+
+    // Button Colors
+    "button-secondary": colors.$neutral-bright-white,
+    "button-secondary-hover": colors.$neutral-light-border,
+    "button-high-contrast": colors.$neutral-bright-white,
+  ),
+);
+
+$reference-theme: map.get($themes, "dark");
+
+@each $theme-name, $theme-values in $themes {
+  @each $token, $value in $reference-theme {
+    @if not map.has-key($theme-values, $token) {
+      @error "Theme '#{$theme-name}' is missing token '#{$token}'.";
+    }
+  }
+
+  @each $token, $value in $theme-values {
+    @if not map.has-key($reference-theme, $token) {
+      @error "Theme '#{$theme-name}' contains unexpected token '#{$token}'.";
+    }
+  }
+}

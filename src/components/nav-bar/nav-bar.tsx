@@ -1,5 +1,5 @@
 import { faHouseChimney, faPaperPlane, faUser, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
-import './nav-bar.css';
+import './nav-bar.scss';
 import TabPill from '@components/tab-pill/tab-pill';
 import { useEffect, useState } from 'react';
 import { useApplicationView,  } from '../../context/ApplicationViewContext';

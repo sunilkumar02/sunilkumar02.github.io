@@ -1,4 +1,4 @@
-import style from './button.module.css';
+import style from './button.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 

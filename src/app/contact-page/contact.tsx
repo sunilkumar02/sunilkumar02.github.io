@@ -1,4 +1,4 @@
-import './contact.css';
+import './contact.scss';
 import Computer from '../../assets/computer.png';
 import TelePhone from '../../assets/telephone.png';
 import User from '../../assets/user.png';

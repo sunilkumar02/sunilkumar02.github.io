@@ -12,10 +12,12 @@
     height: 24px;
     margin: 0 0.5rem;
     padding: 1rem;
-    border: 2px solid var(--color-accent-tertiary);
+    border: 2px solid var(--semantic-line-rule);
     border-radius: 50%;
-    background-color: var(--color-accent-tertiary);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 60px rgba(255, 255, 255, 0.2);
+    background-color: var(--semantic-line-rule);
+    box-shadow:
+        0 0 20px var(--semantic-text-body-high-contrast-20),
+        0 0 60px var(--semantic-text-body-high-contrast-20);
 }
 
 .infoIcons {
@@ -43,10 +45,9 @@
     text-align: center;
 }
 
-.loading-page p:before {
-    /* content: ''; */
+.loading-page p::before {
     position: absolute;
-    background-color: var(--color-accent-tertiary);
+    background-color: var(--semantic-line-rule);
     width: 100%;
     height: 100%;
     left: 0;

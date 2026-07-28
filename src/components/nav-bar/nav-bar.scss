@@ -16,7 +16,7 @@
 .menuItems a,
 .menuItems a:hover,
 .menuItems a:active {
-    color: var(--color-link);
+    color: var(--semantic-accent-primary);
     text-decoration: none;
     line-height: 1.2em;
     height: 60px;
@@ -28,4 +28,3 @@
     line-height: 1.2em;
     font-size: 12px;
 }
-

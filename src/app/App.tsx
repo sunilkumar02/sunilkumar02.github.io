@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import ApplicationLayout from './layouts/application-layout';
-import Home from './views/home-page/home';
+import ApplicationLayout from '../layouts/application-layout';
+import Home from './home-page/home';
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from './firebase/firebase';
+import { db } from '../firebase/firebase';
 import type { userInfo } from '@utils/types/user.type';
-import LoadingView from './views/loading-page/loading-view';
-import { useApplicationView } from './context/ApplicationViewContext';
-import { applicationView } from './utils/enums/enums';
+import LoadingView from './loading-page/loading-view';
+import { useApplicationView } from '../context/ApplicationViewContext';
+import { applicationView } from '../utils/enums/enums';
 import About from '@views/about-page/about';
 import SkillView from '@views/skill-page/skill';
 

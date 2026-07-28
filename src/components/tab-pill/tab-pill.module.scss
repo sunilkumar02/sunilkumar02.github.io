@@ -1,6 +1,5 @@
 .tab-pill {
     position: relative;
-    -webkit-transition: width 0.5s;
     transition: width 0.5s;
 }
 
@@ -9,24 +8,24 @@
     line-height: 1.2;
     display: inline-block;
     padding: 8px 16px 8px 8px;
-    background-color: rgb(94 94 94 / 40%);
+    background-color: var(--semantic-panel-bg-04-40);
     border-radius: 32px;
 }
 
-.tab-pill--notify::before{
+.tab-pill--notify::before {
     content: '';
     display: inline-block;
     margin-right: 0.25rem;
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
-    background-color: var(--color-primary);
+    background-color: var(--semantic-accent-primary);
     animation: ping 1.7s cubic-bezier(0, 0, 0.2, 1) infinite alternate;
     opacity: 0.25;
     vertical-align: middle;
 }
 
-.tab-pill--notify::after{
+.tab-pill--notify::after {
     content: '';
     position: absolute;
     top: calc(50% - 0.2rem);
@@ -34,29 +33,31 @@
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
-    background-color: var(--color-primary);
+    background-color: var(--semantic-accent-primary);
 }
 
 .tab-pill-label {
-    color:  var(--color-text-50);
+    color: var(--semantic-text-body-50);
 }
 
 .tab-pill--tab {
-    color: var(--color-text);
-    background-color: var(--color-accent-tertiary);
+    color: var(--semantic-text-body);
+    background-color: var(--semantic-line-rule);
     padding: 0.7rem;
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
     border-radius: 32px;
-    border: 2px solid var(--color-accent-tertiary);
+    border: 2px solid var(--semantic-line-rule);
     cursor: pointer;
 }
+
 .tab-pill-icon {
-  width: 24px;
-  height: 24px;
-  transform: translateY(0%);
+    width: 24px;
+    height: 24px;
+    transform: translateY(0%);
 }
+
 .tab-pill--tab .tab-pill-label {
     color: inherit;
     white-space: nowrap;
@@ -64,9 +65,9 @@
 }
 
 .tab-pill--tab:hover {
-    color: var(--color-text);
-    background-color: var(--color-primary);
-    border: 2px solid var(--color-primary);
+    color: var(--semantic-text-body);
+    background-color: var(--semantic-accent-primary);
+    border-color: var(--semantic-accent-primary);
 }
 
 .tab-pill--tab:hover .tab-pill-label {
@@ -84,8 +85,7 @@
     text-align: center;
 }
 
-
-.isIconTab.tab-pill--tab span{
+.isIconTab.tab-pill--tab span {
     transition: all 0.5s ease-in-out;
     display: block;
     width: 100%;
@@ -93,36 +93,29 @@
     font-weight: 400;
 }
 
-
- .isIconTab.tab-pill--tab span svg {
+.isIconTab.tab-pill--tab span svg {
     width: 100%;
     height: 100%;
- }
-
+}
 
 .isIconTab.tab-pill--tab:hover {
     width: 160px;
 }
 
 .active {
-    background-color: var(--color-primary);
-    color: var(--color-text);
-    border: 2px solid var(--color-primary);
+    background-color: var(--semantic-accent-primary);
+    color: var(--semantic-text-body);
+    border: 2px solid var(--semantic-accent-primary);
 }
 
-
-
-
-
-
-
 @keyframes ping {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0.2;
-  }
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0.2;
+    }
 }

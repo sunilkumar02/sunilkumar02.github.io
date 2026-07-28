@@ -1,6 +1,6 @@
 
 import NavBar from "../components/nav-bar/nav-bar";
-import '@styles/layout.css'
+import '@styles/layout.scss'
 
 //design a layout component
 interface ApplicationLayoutProps {

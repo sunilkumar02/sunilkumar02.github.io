@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import style from './tab-pill.module.css'
+import style from './tab-pill.module.scss'
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 interface TabPillProps {

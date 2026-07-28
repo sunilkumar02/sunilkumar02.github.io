@@ -8,7 +8,7 @@
     line-height: 1.5;
     font-weight: 800;
     text-transform: capitalize;
-    color: var(--color-text);
+    color: var(--semantic-text-body);
     position: relative;
     display: inline-block;
 }
@@ -19,7 +19,7 @@
     position: absolute;
     width: 60px;
     height: 5px;
-    background-color: var(--color-primary);
+    background-color: var(--semantic-accent-primary);
     left: 0;
     bottom: 0;
 }
@@ -30,7 +30,7 @@
     position: absolute;
     width: 120px;
     height: 1px;
-    background-color: var(--color-secondary);
+    background-color: var(--semantic-text-body);
     left: 0;
     bottom: 2px;
 }
@@ -55,7 +55,7 @@
 
 .underline .subtitle {
     font-size: 1.2rem;
-    color: var(--color-primary);
+    color: var(--semantic-accent-primary);
     text-transform: capitalize;
     line-height: 1.5;
     display: inline-block;
@@ -84,7 +84,7 @@
     left: 0;
     top: -15px;
     opacity: 0;
-    color: #2F352B;
+    color: var(--semantic-neutral-surface);
     z-index: -1;
     animation: bounce-in 1.5s ease-in-out forwards;
 }

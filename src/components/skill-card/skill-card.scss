@@ -7,8 +7,8 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    background-color: var(--color-body-bg);
-    border-width: 1px;
+    background-color: var(--semantic-page-bg);
+    border: 1px solid var(--semantic-line-rule);
     border-radius: 10px;
     transition: box-shadow 0.6s ease, scale 0.5s ease;
     cursor: pointer;
@@ -17,7 +17,7 @@
 
 .skill-card:hover {
     scale: 1.1;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 20px var(--semantic-accent-branded-50);
 }
 
 .skill-image {
@@ -26,7 +26,7 @@
 }
 
 .skill-title {
-    color: var(--color-accent-secondary);
+    color: var(--semantic-accent-branded);
     margin: 0;
     text-align: center;
     font-weight: 500;

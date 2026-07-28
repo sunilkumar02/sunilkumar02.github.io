@@ -18,7 +18,7 @@ const Home = ({userData}: {userData: userInfo}) => {
           <div className='banner-content-outer'>
 
             <TabPill label='Available to work' pillType="notify" className='gelatine' />
-            <h1>Hey, I'm <span className='highlight-text'>{userData.first_name} {userData.last_name}</span></h1>
+            <h1 className='font-display'>Hey, I'm <span className='font-extrabold text-semantic-accent-primary'>{userData.first_name} {userData.last_name}</span></h1>
             <h3>a {userData.role} from {userData.base_location}.</h3>
             <p>I develop user-centric front-end solutions that harness technology to drive positive impact and enhance lives.</p>
             <Button className='mt-8' onClick={() => console.log('Download Resume clicked')}>Download Resume</Button>
