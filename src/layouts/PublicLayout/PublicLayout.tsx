@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 import { SideNav } from '@components/common/SideNav';
 import { ThemeToggle } from '@components/common/ThemeToggle';
-import { profileMockData, ProfileSocialLink } from '../../features/portfolio';
+import { profileMockData, ProfileSocialLink } from '../../features/porfile';
 
 const PublicLayout = () => {
   const socialMedia = Array.isArray(profileMockData.social_media)

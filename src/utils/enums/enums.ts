@@ -19,16 +19,7 @@ export enum TextAlignment {
   Right = 'right'
 }
 
-export enum GridTemplateColumns {
-  'one-third' = 'one-third',
-  'two-two' = 'two-two',
-  'three-one' = 'three-one',
-  'one-one-one' = 'one-one-one',
-  'four' = 'four'
-}
-
 export enum HeadlineType {
   Underline = 'underline',
   Overlay = 'overlay'
 }
-

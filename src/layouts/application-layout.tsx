@@ -1,7 +1,5 @@
 
 
-import '@styles/layout.scss'
-
 //design a layout component
 interface ApplicationLayoutProps {
     className?: string;

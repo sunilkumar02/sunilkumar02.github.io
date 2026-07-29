@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router';
 import { AuthorizedRoute } from '../features/auth';
-import { profileMockData } from '../features/portfolio';
+import { profileMockData } from '../features/porfile';
 import { AuthorizedLayout } from '../layouts/AuthorizedLayout';
 import { PublicLayout } from '../layouts/PublicLayout';
 import App from './App';
