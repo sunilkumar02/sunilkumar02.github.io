@@ -195,6 +195,30 @@
     heroRoleCaret 700ms step-end 1.05s 4;
 }
 
+.about-title-typewriter {
+  display: inline-flex;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid transparent;
+  vertical-align: bottom;
+}
+
+.about-title-typewriter--active {
+  animation:
+    aboutTitleTyping 1.35s steps(9, end) 300ms forwards,
+    heroRoleCaret 650ms step-end 300ms 4;
+}
+
+@keyframes aboutTitleTyping {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 12em;
+  }
+}
+
 @keyframes heroRoleTyping {
   from {
     max-width: 0;
@@ -215,7 +239,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-role-typewriter,
-  .hero-role-typewriter--active {
+  .hero-role-typewriter--active,
+  .about-title-typewriter,
+  .about-title-typewriter--active {
     max-width: 100%;
     border-right-color: transparent;
     animation: none;

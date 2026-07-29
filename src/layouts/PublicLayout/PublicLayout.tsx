@@ -10,7 +10,7 @@ const PublicLayout = () => {
 
   return (
     <div className="relative min-h-svh w-full">
-      <div className="absolute right-4 top-4 z-30 md:right-6 md:top-6">
+      <div className="fixed right-4 top-4 z-30 md:right-6 md:top-6">
         <ThemeToggle />
       </div>
 
