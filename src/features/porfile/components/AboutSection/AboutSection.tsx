@@ -38,7 +38,7 @@ const AboutSection = ({ userData }: IAboutSectionProps) => {
     <section
       id="about"
       ref={sectionRef}
-      className="relative isolate min-h-svh overflow-hidden bg-semantic-page-bg px-6 py-12 text-semantic-text-body md:px-12 md:py-14 lg:px-[clamp(4rem,7vw,8rem)] lg:py-16"
+      className="relative isolate overflow-hidden bg-semantic-page-bg px-6 py-12 text-semantic-text-body md:px-12 md:py-14 lg:px-[clamp(4rem,7vw,8rem)] lg:py-16"
       aria-labelledby="about-title"
     >
       <div
