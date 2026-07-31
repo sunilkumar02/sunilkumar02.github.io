@@ -6,6 +6,8 @@ export interface userInfo {
   profile_url: string;
   role: string;
   description: string;
+  about?: string[];
+  resume_url?: string;
   base_location: string;
   skills: string[];
   expertise?: string[];

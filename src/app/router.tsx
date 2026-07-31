@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from 'react-router';
+import { createBrowserRouter } from 'react-router';
 import { AuthorizedRoute } from '../features/auth';
 import { profileMockData } from '../features/porfile';
 import { AuthorizedLayout } from '../layouts/AuthorizedLayout';
@@ -14,12 +14,12 @@ export const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       {
-        index: true,
-        element: <Navigate to="/profile" replace />,
-      },
-      {
         element: <PublicLayout />,
         children: [
+          {
+            index: true,
+            element: <Home userData={profileMockData} />,
+          },
           {
             path: 'profile',
             element: <Home userData={profileMockData} />,

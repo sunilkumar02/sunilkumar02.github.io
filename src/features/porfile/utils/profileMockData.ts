@@ -16,6 +16,13 @@ export const profileMockData = {
   description:
     "Creating AI-powered solutions. Building modern web experiences. Solving real-world problems with technology.",
 
+  resume_url: "",
+
+  about: [
+    'I\'m a Senior Frontend Engineer and Full-Stack AI Engineer passionate about building intelligent, scalable software. With 7+ years of experience, I specialize in React, TypeScript, Python, LLM integrations, RAG, AI agents, and modern cloud-native architectures.',
+     'I build end-to-end AI applications that seamlessly connect powerful backend intelligence with intuitive, high-performance user experiences. I enjoy solving complex engineering problems, designing scalable systems, and leveraging artificial intelligence to create impactful products that users love.'
+  ],
+
   base_location: "Bengaluru, India",
 
   social_media: [

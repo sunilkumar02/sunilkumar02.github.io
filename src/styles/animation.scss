@@ -195,6 +195,76 @@
     heroRoleCaret 700ms step-end 1.05s 4;
 }
 
+.about-title-typewriter {
+  display: inline-flex;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid transparent;
+  vertical-align: bottom;
+}
+
+.about-title-typewriter--active {
+  animation:
+    aboutTitleTyping 1.35s steps(9, end) 300ms forwards,
+    heroRoleCaret 650ms step-end 300ms 4;
+}
+
+@keyframes aboutTitleTyping {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 12em;
+  }
+}
+
+.skill-fade-pending {
+  opacity: 0;
+  scale: 0.2;
+}
+
+.skill-fade-in {
+  opacity: 0;
+  scale: 0.2;
+  animation: skillFadeIn 1s ease-out var(--skill-fade-delay, 0ms) both,
+    skillFloat var(--skill-float-duration, 10s) ease-in-out
+      var(--skill-float-delay, 1.2s) infinite;
+}
+
+@keyframes skillFadeIn {
+  from {
+    opacity: 0;
+    scale: 0.2;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes skillFloat {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  24% {
+    transform: translate(var(--skill-float-x, 10px), var(--skill-float-y, -10px));
+  }
+  51% {
+    transform: translate(
+      var(--skill-float-x-reverse, -10px),
+      var(--skill-float-y, -10px)
+    );
+  }
+  77% {
+    transform: translate(
+      var(--skill-float-x, 10px),
+      var(--skill-float-y-reverse, 10px)
+    );
+  }
+}
+
 @keyframes heroRoleTyping {
   from {
     max-width: 0;
@@ -215,9 +285,16 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-role-typewriter,
-  .hero-role-typewriter--active {
+  .hero-role-typewriter--active,
+  .about-title-typewriter,
+  .about-title-typewriter--active,
+  .skill-fade-pending,
+  .skill-fade-in {
     max-width: 100%;
     border-right-color: transparent;
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0);
     animation: none;
   }
 }
