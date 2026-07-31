@@ -219,41 +219,49 @@
   }
 }
 
-.skill-bounce-pending {
+.skill-fade-pending {
   opacity: 0;
-  transform: translateY(28px);
+  scale: 0.2;
 }
 
-.skill-bounce-in {
-  animation: skillBounceIn 1.05s cubic-bezier(0.22, 0.61, 0.36, 1)
-    var(--skill-bounce-delay, 0ms) forwards;
+.skill-fade-in {
+  opacity: 0;
+  scale: 0.2;
+  animation: skillFadeIn 1s ease-out var(--skill-fade-delay, 0ms) both,
+    skillFloat var(--skill-float-duration, 10s) ease-in-out
+      var(--skill-float-delay, 1.2s) infinite;
 }
 
-@keyframes skillBounceIn {
-  0% {
+@keyframes skillFadeIn {
+  from {
     opacity: 0;
-    transform: translateY(28px);
-    filter: blur(4px);
+    scale: 0.2;
   }
-  42% {
-    opacity: 0.5;
-    transform: translateY(-16px);
-    filter: blur(0);
-  }
-  62% {
-    transform: translateY(8px);
-  }
-  78% {
-    opacity: 0.75;
-    transform: translateY(-4px);
-  }
-  90% {
-    transform: translateY(2px);
-  }
-  100% {
+  to {
     opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+    scale: 1;
+  }
+}
+
+@keyframes skillFloat {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  24% {
+    transform: translate(var(--skill-float-x, 10px), var(--skill-float-y, -10px));
+  }
+  51% {
+    transform: translate(
+      var(--skill-float-x-reverse, -10px),
+      var(--skill-float-y, -10px)
+    );
+  }
+  77% {
+    transform: translate(
+      var(--skill-float-x, 10px),
+      var(--skill-float-y-reverse, 10px)
+    );
   }
 }
 
@@ -280,11 +288,12 @@
   .hero-role-typewriter--active,
   .about-title-typewriter,
   .about-title-typewriter--active,
-  .skill-bounce-pending,
-  .skill-bounce-in {
+  .skill-fade-pending,
+  .skill-fade-in {
     max-width: 100%;
     border-right-color: transparent;
     opacity: 1;
+    scale: 1;
     transform: translateY(0);
     animation: none;
   }

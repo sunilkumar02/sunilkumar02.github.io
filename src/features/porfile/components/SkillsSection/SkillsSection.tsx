@@ -277,8 +277,17 @@ const SkillsSection = ({ userData }: ISkillsSectionProps) => {
 
             if (!position) return null;
 
+            const floatX = [12, -9, 15, -13, 8, -16][index % 6] ?? 10;
+            const floatY = [-10, 14, 8, -13, 16, -7][index % 6] ?? -10;
+            const fadeDelay = index * 70;
             const style = {
-              '--skill-bounce-delay': `${index * 70}ms`,
+              '--skill-fade-delay': `${fadeDelay}ms`,
+              '--skill-float-delay': `${1200 + fadeDelay + (index % 4) * 130}ms`,
+              '--skill-float-duration': `${10000 + ((index * 613) % 2300)}ms`,
+              '--skill-float-x': `${floatX}px`,
+              '--skill-float-x-reverse': `${-floatX}px`,
+              '--skill-float-y': `${floatY}px`,
+              '--skill-float-y-reverse': `${-floatY}px`,
               left: `${position.x}%`,
               top: `${position.y}%`,
             } as CSSProperties;
@@ -286,7 +295,7 @@ const SkillsSection = ({ userData }: ISkillsSectionProps) => {
             return (
               <button
                 type="button"
-                className={`${isVisible ? 'skill-bounce-in' : 'skill-bounce-pending'} absolute z-10 flex h-24 w-20 -translate-x-1/2 -translate-y-1/2 touch-none select-none flex-col items-center justify-center gap-2 rounded-xl text-semantic-text-body transition-[scale,color,filter] hover:scale-110 hover:text-semantic-text-strong hover:drop-shadow-[0_0_14px_var(--semantic-shadow-color)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-semantic-accent-primary active:cursor-grabbing md:h-28 md:w-24 ${dragState?.index === index ? 'cursor-grabbing' : 'cursor-grab'}`}
+                className={`absolute z-10 flex h-24 w-20 -translate-x-1/2 -translate-y-1/2 touch-none select-none flex-col items-center justify-center rounded-xl text-semantic-text-body transition-[scale,color,filter] hover:scale-110 hover:text-semantic-text-strong hover:drop-shadow-[0_0_14px_var(--semantic-shadow-color)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-semantic-accent-primary active:cursor-grabbing md:h-28 md:w-24 ${dragState?.index === index ? 'cursor-grabbing' : 'cursor-grab'}`}
                 style={style}
                 aria-label={`${skill} skill. Drag or use arrow keys to reposition.`}
                 onKeyDown={(event) => handleKeyDown(event, index)}
@@ -295,23 +304,27 @@ const SkillsSection = ({ userData }: ISkillsSectionProps) => {
                 onPointerMove={handlePointerMove}
                 onPointerUp={handlePointerEnd}
               >
-                {visual.asset ? (
-                  <img
-                    className="h-11 w-11 object-contain md:h-14 md:w-14"
-                    src={visual.asset}
-                    alt=""
-                    draggable={false}
-                  />
-                ) : (
-                  Icon && (
-                    <Icon
-                      className="text-[2.75rem] text-semantic-accent-primary md:text-[3.25rem]"
-                      aria-hidden="true"
+                <span
+                  className={`${isVisible ? 'skill-fade-in' : 'skill-fade-pending'} flex flex-col items-center justify-center gap-2`}
+                >
+                  {visual.asset ? (
+                    <img
+                      className="h-11 w-11 object-contain md:h-14 md:w-14"
+                      src={visual.asset}
+                      alt=""
+                      draggable={false}
                     />
-                  )
-                )}
-                <span className="max-w-24 text-center text-[0.65rem] font-semibold leading-tight text-semantic-text-body md:text-xs">
-                  {skill}
+                  ) : (
+                    Icon && (
+                      <Icon
+                        className="text-[2.75rem] text-semantic-accent-primary md:text-[3.25rem]"
+                        aria-hidden="true"
+                      />
+                    )
+                  )}
+                  <span className="max-w-24 text-center text-[0.65rem] font-semibold leading-tight text-semantic-text-body md:text-xs">
+                    {skill}
+                  </span>
                 </span>
               </button>
             );
