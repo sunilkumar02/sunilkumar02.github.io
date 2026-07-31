@@ -283,7 +283,7 @@ const SkillsSection = ({ userData }: ISkillsSectionProps) => {
             const style = {
               '--skill-fade-delay': `${fadeDelay}ms`,
               '--skill-float-delay': `${1200 + fadeDelay + (index % 4) * 130}ms`,
-              '--skill-float-duration': `${10000 + ((index * 613) % 2300)}ms`,
+              '--skill-float-duration': `${25000 + ((index * 613) % 2300)}ms`,
               '--skill-float-x': `${floatX}px`,
               '--skill-float-x-reverse': `${-floatX}px`,
               '--skill-float-y': `${floatY}px`,

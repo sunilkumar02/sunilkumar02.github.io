@@ -227,8 +227,8 @@
 .skill-fade-in {
   opacity: 0;
   scale: 0.2;
-  animation: skillFadeIn 1s ease-out var(--skill-fade-delay, 0ms) both,
-    skillFloat var(--skill-float-duration, 10s) ease-in-out
+  animation: skillFadeIn 2s ease-out var(--skill-fade-delay, 0ms) both,
+    skillFloat var(--skill-float-duration, 25s) ease-in-out
       var(--skill-float-delay, 1.2s) infinite;
 }
 
