@@ -219,6 +219,43 @@
   }
 }
 
+.skill-bounce-pending {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.skill-bounce-in {
+  animation: skillBounceIn 1.05s cubic-bezier(0.22, 0.61, 0.36, 1)
+    var(--skill-bounce-delay, 0ms) forwards;
+}
+
+@keyframes skillBounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(4px);
+  }
+  42% {
+    opacity: 1;
+    transform: translateY(-16px);
+    filter: blur(0);
+  }
+  62% {
+    transform: translateY(8px);
+  }
+  78% {
+    transform: translateY(-4px);
+  }
+  90% {
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
 @keyframes heroRoleTyping {
   from {
     max-width: 0;
@@ -241,9 +278,13 @@
   .hero-role-typewriter,
   .hero-role-typewriter--active,
   .about-title-typewriter,
-  .about-title-typewriter--active {
+  .about-title-typewriter--active,
+  .skill-bounce-pending,
+  .skill-bounce-in {
     max-width: 100%;
     border-right-color: transparent;
+    opacity: 1;
+    transform: translateY(0);
     animation: none;
   }
 }
